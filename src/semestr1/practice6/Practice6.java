@@ -190,9 +190,54 @@ public class Practice6 {
         }
 
             System.out.println("Завдання 21");
+        CurrencyExchange exchange = new CurrencyExchange();
+        double dollars = exchange.toUSD(1000);
+        System.out.println(dollars);
 
+        System.out.println("Завдання 22");
+        Employee employee = new Employee();
+        employee.baseSalary = 30000;
+        employee.bonusPercentage = 15;
+        System.out.println(employee.calculateTotalSalary());
+        System.out.println(employee.calculateTax());
 
+        System.out.println("Завдання 23");
+        TextFormatter formatter = new TextFormatter();
 
+        String word = "Привіт";
+
+        System.out.println(formatter.formatTitle(word));
+        System.out.println(formatter.countVowels(word));
+
+        System.out.println("Завдання 24");
+        Triangle triangle = new Triangle();
+        System.out.println(triangle.isValid());
+        System.out.println(triangle.getArea());
+
+        System.out.println("Завдання 25 ");
+        SecretVault vault = new SecretVault();
+        //has private access
+        System.out.println(vault.verifyCode("Pass123"));
+        System.out.println(vault.verifyCode("hacked"));
+
+        System.out.println("Завдання 26 ");
+        UserAccount account = new UserAccount();
+
+        account.setCredentials("Senya", "12345");
+
+        System.out.println(account.login("Senya", "12345"));
+        System.out.println(account.login("Senya", "11111"));
+
+        account.changePassword("12345", "67890");
+
+        System.out.println(account.login("Senya", "67890"));
+
+        System.out.println("Завдання 27 ");
+        BankAccount account1 = new BankAccount();
+        account1.deposit(1000);
+
+        System.out.println(account1.withdraw(1500));
+        System.out.println(account1.getBalance());
     }
 }
 
