@@ -582,7 +582,7 @@ git push origin main
 
 #### Завдання 11: Смартфон, Акумулятор та Дисплей (`Battery` + `Display` $\to$ `SmartDevice`)
 1. Створіть клас `Battery` (`private int capacityMah`, `private int chargePercent` у межах $[0; 100]$, методи `drain(int percent)` та `charge(int percent)`).
-2. Створіть клас `Display` (`private double diagonalInches`, `private int brightnessPercent` у межах $[10; 100]$).
+2. Створіть клас `v` (`private double diagonalInches`, `private int brightnessPercent` у межах $[10; 100]$).
 3. Створіть клас `SmartDevice`, який компонує **обидва** об'єкти: `private final Battery battery` та `private final Display display`.
 4. Реалізуйте метод `public void watchVideo(int minutes)`: якщо яскравість дисплея $> 70\%$, батарея втрачає $2\%$ заряду за кожні 10 хвилин, інакше — $1\%$. Якщо заряд падає до $0$, пристрій вимикається.
 
@@ -785,10 +785,10 @@ git push origin main
    ```bash
    git status
    ```
-3. Додайте файли практичної роботи №9 в індекс, зробіть осмислений коміт та відправте код у свій GitHub-репозиторій:
-   ```bash
+3. Додайте файл  ```bash
    git add src/main/java/semester1/practice09/
    git commit -m "feat(practice09): complete 40 tasks on encapsulation, composition and abstract classes"
-   git push origin main
+   git commit -m "feat(practiи практичної роботи №9 в індекс, зробіть осмислений коміт та відправте код у свій GitHub-репозиторій:
+ ce09):
    ```
 4. Переконайтеся у браузері, що ваш код опубліковано на GitHub до дедлайну (наступного четверга)!

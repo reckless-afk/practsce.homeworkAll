@@ -238,8 +238,127 @@ public class Practice6 {
 
         System.out.println(account1.withdraw(1500));
         System.out.println(account1.getBalance());
+
+        System.out.println("Завдання 28 ");
+        Thermometer thermometer = new Thermometer();
+        thermometer.setTemperature(-1000);
+
+        System.out.println("Завдання 29 ");
+        CarSpeedometer car = new CarSpeedometer();
+
+        System.out.println("Початкова швидкість: " + car.getSpeed() + " км/год");
+        car.accelerate(80);
+        System.out.println("Розгонулися на 80. Швидкість: " + car.getSpeed() + " км/год");
+        car.accelerate(200);
+        System.out.println("Спробували розігнатися ще на 200. Швидкість (межа 240): " + car.getSpeed() + " км/год");
+        car.brake(50);
+        System.out.println("Загальмували на 50. Швидкість: " + car.getSpeed() + " км/год");
+        car.brake(300);
+        System.out.println("Спробували різко загальмувати на 300. Швидкість (межа 0): " + car.getSpeed() + " км/год");
+
+
+        System.out.println("Завдання 30");
+
+        Person person1 = new Person();
+        person1.setName("Олександр");
+        person1.setAge(20);
+
+        Person person2 = new Person();
+        person2.setName("Софія");
+        person2.setAge(135);
+        System.out.println("--- Перша персона ---");
+        person1.printSummary();
+        System.out.println("--- Друга персона ---");
+        person2.printSummary();
+
+        System.out.println("Завдання 31");
+        DiscountCard discountCard = new DiscountCard();
+      discountCard.addPurchase(30000);
+      discountCard.printCardInfo();
+
+        System.out.println("Завдання 32");
+        SmartDoorLock lock = new SmartDoorLock();
+        lock.enterPin(1111);
+        lock.enterPin(2222);
+        lock.enterPin(3333);
+        lock.enterPin(1234);
+
+        System.out.println("Завдання 33");
+        GradeBook book = new GradeBook();
+        int[] grades = {85, 92, 78, 96, 65};
+        book.setData("Арсеній", grades);
+        System.out.println("Студент: " + book.getStudentName());
+        System.out.println("Середній бал: " + book.getAverage());
+        System.out.println("Найвища оцінка: " + book.getHighestGrade());
+        System.out.println("Найнижча оцінка: " + book.getLowestGrade());
+
+        System.out.println("Завдання 34");
+        ArrayStats stats = new ArrayStats();
+        stats.setNumbers(numbers);
+        System.out.println("Парних чисел: " + stats.countEvens());
+        System.out.println("Непарних чисел: " + stats.countOdds());
+        System.out.println("Сума: " + stats.calculateSum());
+
+        System.out.println("Завдання 35");
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItem(25.5);
+        cart.addItem(10.0);
+        cart.addItem(40.0);
+        System.out.println("До знижки: " + cart.getTotalCost());
+        cart.applyDiscount(15);
+        System.out.println("Після знижки: " + cart.getTotalCost());
+
+        System.out.println("Завдання 36");
+        TemperatureTracker tracker = new TemperatureTracker();
+
+        double[] temps = {15.0, 18.5, 20.0, 17.0, 22.5, 19.0, 16.5};
+
+        tracker.setTemps(temps);
+
+        System.out.println("Днів вище 20°C: " + tracker.countDaysAbove(20));
+
+        System.out.println("Завдання 37");
+        ArraySearcher searcher = new ArraySearcher();
+        searcher.setData(new int[]{4, 8, 2, 1});
+
+        System.out.println(searcher.contains(8));
+        System.out.println(searcher.contains(5));
+
+        System.out.println(searcher.findIndex(2));
+        System.out.println(searcher.findIndex(5));
+
+        System.out.println("Завдання 38");
+        Vector3D vector = new Vector3D();
+
+        vector.setCoords(2, 3, 6);
+
+        System.out.println(vector.getMagnitude());
+
+        vector.multiplyByScalar(2);
+
+        vector.printVector();
+
+        System.out.println("Завдання 39");
+        int[][] numbers1 = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+
+        Matrix2D matrix = new Matrix2D();
+
+        matrix.setGrid(numbers1);
+
+        System.out.println("Матриця:");
+        matrix.printMatrix();
+
+        System.out.println("Сума всіх чисел: " + matrix.getTotalSum());
+        System.out.println("Сума другого рядка: " + matrix.getRowSum(1));
+
     }
 }
+
+
 
 
 

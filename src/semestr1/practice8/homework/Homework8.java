@@ -1,4 +1,96 @@
 package semestr1.practice8.homework;
 
 public class Homework8 {
+   public static void main(String[] args) {
+       ShadowMonarch monarch = new ShadowMonarch(
+               "Сон Джін-Ву", 50, 1000, 200,
+               150, 80
+       );
+
+       DungeonEntity knight = new DungeonEntity(
+               "Елітний лицар Ігріс", 40, 350, 350,
+               70, 20
+       );
+
+       DungeonBoss boss = new DungeonBoss(
+               "Король Мурах Беру", 80, 1200, 1200,
+               120, 40, "Кошмар острова Чеджу", false
+       );
+
+       System.out.println("========== ПОЧАТОК РЕЙДУ ==========");
+       System.out.println(monarch);
+
+       // БІЙ З ЕЛІТНИМ ЛИЦАРЕМ
+       System.out.println("\n========== БІЙ З ІГРІСОМ ==========");
+
+       int round = 1;
+
+       while (monarch.isAlive() && knight.isAlive()) {
+
+           System.out.println("\n--- РАУНД " + round + " ---");
+
+           int damage = monarch.performAttack();
+           int actualDamage = knight.takeDamage(damage);
+
+           System.out.println("Джін-Ву атакує!");
+           System.out.println("Лицар отримав " + actualDamage +
+                   " шкоди. HP: " + knight.gethp());
+           if (knight.isAlive()) {
+               int enemyDamage = monarch.takeDamage(
+                       knight.performAttack()
+               );
+               System.out.println("Лицар контратакує! Джін-Ву отримує "
+                       + enemyDamage + " шкоди.");
+           }
+           round++;
+       }
+
+       if (!monarch.isAlive()) {
+           System.out.println("Джін-Ву переможений!");
+           return;
+       }
+       System.out.println("\n[ПЕРЕМОГА НАД ІГРІСОМ!]");
+       monarch.arise("Ігріс", 90);
+       monarch.arise("Кібернетичний модуль Титана", 70);
+       System.out.println("\n========== БІЙ З ГОЛОВНИМ БОСОМ ==========");
+       System.out.println(boss);
+
+       round = 1;
+
+       while (monarch.isAlive() && boss.isAlive()) {
+
+           System.out.println("\n--- РАУНД " + round + " ---");
+
+           int damage = monarch.performAttack();
+           int actualDamage = boss.takeDamage(damage);
+
+           System.out.println("Джін-Ву та його легіон атакують!");
+           System.out.println("Бос отримав " + actualDamage +
+                   " шкоди. HP: " + boss.gethp());
+
+           if (boss.isAlive()) {
+               int enemyDamage = monarch.takeDamage(
+                       boss.performAttack()
+               );
+
+               System.out.println("Бос контратакує! Джін-Ву отримує "
+                       + enemyDamage + " шкоди.");
+           }
+
+           round++;
+       }
+       if (!monarch.isAlive()) {
+           System.out.println("Джін-Ву загинув у підземеллі!");
+           return;
+       }
+       System.out.println("\n========== ПЕРЕМОГА! ==========");
+       System.out.println("Головного боса переможено!");
+       monarch.arise("Беру", 180);
+
+       monarch.levelUp();
+       System.out.println("\n========== ДОСЬЄ МОНАРХА ==========");
+       System.out.println(monarch);
+
+       System.out.println("\n========== РЕЙД ЗАВЕРШЕНО ==========");
+   }
 }

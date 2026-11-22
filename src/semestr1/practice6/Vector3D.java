@@ -1,4 +1,4 @@
- package semestr1.practice6.homework;
+package semestr1.practice6;
 
 public class Vector3D {
     private double[] coords = new double[3];
