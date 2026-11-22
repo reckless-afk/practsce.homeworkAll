@@ -1,6 +1,6 @@
 package semestr1.practice8.homework;
 
-public class Homework8 {
+public class Task5ShadowMonarchRpg {
    public static void main(String[] args) {
        ShadowMonarch monarch = new ShadowMonarch(
                "Сон Джін-Ву", 50, 1000, 200,
